@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../helpers/assetVideoPlayer.dart';
 
 class AssetsVideo extends StatefulWidget {
@@ -18,9 +17,7 @@ class _AssetsVideoState extends State<AssetsVideo> {
         ListTile(
           title: Text(
             "Dark Trailer",
-            style: GoogleFonts.dmSans(
-              fontSize: 35.0,
-            ),
+            style: TextStyle(fontSize: 35.0),
           ),
           trailing: GestureDetector(
             child: Icon(Icons.exit_to_app),
@@ -35,9 +32,7 @@ class _AssetsVideoState extends State<AssetsVideo> {
         ListTile(
           title: Text(
             "Mustang Shelby",
-            style: GoogleFonts.dmSans(
-              fontSize: 35.0,
-            ),
+            style: TextStyle(fontSize: 35.0),
           ),
           trailing: GestureDetector(
               child: Icon(Icons.exit_to_app),

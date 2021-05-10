@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../data/musicData.dart';
 
 class PlayOnlineMusic extends StatefulWidget {
-  int i;
+  final int i;
   PlayOnlineMusic(
     this.i,
   );
@@ -64,6 +63,7 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
             Container(
               padding: EdgeInsets.all(20.0),
               width: size.width,
+              height: 350.0,
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -78,7 +78,7 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
             Padding(padding: EdgeInsets.only(top: 40.0)),
             Text(
               "${name[widget.i]}",
-              style: GoogleFonts.dmSans(
+              style: Textstyle(
                 fontSize: 26.0,
               ),
             ),

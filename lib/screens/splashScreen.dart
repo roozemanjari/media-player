@@ -8,7 +8,8 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  // It is the first function which is executed when an object of the class is created.
+  // It is the first function which is executed
+  // when an object of the class is created.
   @override
   void initState() {
     super.initState();

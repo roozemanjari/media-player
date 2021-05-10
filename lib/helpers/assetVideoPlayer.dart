@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
 class AssetVideoPlayer extends StatefulWidget {
@@ -44,12 +43,6 @@ class _AssetVideoPlayerState extends State<AssetVideoPlayer> {
             },
           ),
           centerTitle: true,
-          // gradient: LinearGradient(
-          //   colors: [Color(0xFF2468FB), Color(0xFFAB1FD9)],
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          // ),
-          // backgroundColor: Colors.purple,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +80,7 @@ class _AssetVideoPlayerState extends State<AssetVideoPlayer> {
               "${widget.name}" == "darktrailer"
                   ? "Dark Trailer"
                   : "Mustang Shelby",
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 26.0,
               ),
             ),

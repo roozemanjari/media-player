@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Variables
   DateTime currentTime;
   int _selectedIndex = 0;
 
@@ -61,6 +62,7 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: Colors.white70,
         currentIndex: _selectedIndex,
         onTap: (val) {
+          // To rebuild the UI so that the changes are updated
           setState(() {
             _selectedIndex = val;
           });

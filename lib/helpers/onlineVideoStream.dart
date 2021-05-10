@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 import '../data/videoData.dart';
 
@@ -39,7 +38,6 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
           elevation: 0.0,
           title: Text(
             "Video Stream",
-            // style: GoogleFonts.dmSans(),
           ),
           leading: GestureDetector(
             onTap: () {
@@ -49,12 +47,6 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
             child: Icon(Icons.cancel),
           ),
           centerTitle: true,
-          // gradient: LinearGradient(
-          //   colors: [Color(0xFF2468FB), Color(0xFFAB1FD9)],
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          // ),
-          // backgroundColor: Colors.purple,
         ),
         body: Column(
           children: <Widget>[
@@ -90,7 +82,7 @@ class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
             Padding(padding: EdgeInsets.only(top: 30.0)),
             Text(
               "${videoName[widget.i]}",
-              style: GoogleFonts.dmSans(
+              style: TextStyle(
                 fontSize: 26.0,
               ),
             ),

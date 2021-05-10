@@ -16,13 +16,8 @@ class _AssetsState extends State<Assets> {
         appBar: AppBar(
           title: Text("Assets"),
           centerTitle: true,
-          // gradient: LinearGradient(
-          //   colors: [Color(0xFF2468FB), Color(0xFFAB1FD9)],
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          // ),
           bottom: TabBar(
-            indicatorColor: Colors.white70,
+            indicatorColor: Colors.purple,
             tabs: [
               Tab(icon: Icon(Icons.music_note)),
               Tab(icon: Icon(Icons.video_library)),

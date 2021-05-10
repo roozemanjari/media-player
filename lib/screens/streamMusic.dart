@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../data/userData.dart';
 import '../data/musicData.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../helpers/playOnlineMusic.dart';
 
 class StreamMusic extends StatefulWidget {
@@ -51,7 +50,7 @@ class _StreamMusicState extends State<StreamMusic> {
                 width: size.width,
                 child: Text(
                   "$greetingMessage,\nShashwat",
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 35.0,
                   ),
                   textAlign: TextAlign.left,
@@ -94,7 +93,7 @@ class _StreamMusicState extends State<StreamMusic> {
                 width: size.width,
                 child: Text(
                   "All songs",
-                  style: GoogleFonts.dmSans(
+                  style: TextStyle(
                     fontSize: 30.0,
                   ),
                   textAlign: TextAlign.left,
