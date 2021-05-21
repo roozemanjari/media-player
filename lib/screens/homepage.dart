@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mediaplayer/services/web_service.dart';
 import 'streamMusic.dart';
 import '../data/userData.dart';
 import 'assetsUI/assets.dart';
@@ -13,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   // Variables
   DateTime currentTime;
   int _selectedIndex = 0;
+  bool isloading = true;
 
   final List<Widget> _widgetOptions = [
     StreamMusic(),
@@ -25,6 +27,20 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     currentTime = DateTime.now();
     setGreetingMessage();
+    fetchMusicNames();
+  }
+
+  fetchMusicNames() async {
+    try {
+      await WebService.fetchmusic();
+      setState(() {
+        isloading = false;
+      });
+    } catch (e) {
+      setState(() {
+        isloading = false;
+      });
+    }
   }
 
   setGreetingMessage() {
@@ -42,7 +58,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _widgetOptions[_selectedIndex],
+      body: isloading
+          ? Center(child: CircularProgressIndicator())
+          : _widgetOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(

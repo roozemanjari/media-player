@@ -16,7 +16,7 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
   bool isPlaying;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     advancedPlayer.pause();
     isPlaying = true;
@@ -34,6 +34,7 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
       onWillPop: () {
         advancedPlayer.pause();
         Navigator.pop(context);
+        return;
       },
       child: Scaffold(
         appBar: AppBar(
@@ -44,22 +45,14 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
               Navigator.pop(context);
             },
           ),
-          elevation: 0.0,
           title: Text(
             "Music Player",
-            // style: GoogleFonts.dmSans(),
           ),
           centerTitle: true,
-          // gradient: LinearGradient(
-          //   colors: [Color(0xFF2468FB), Color(0xFFAB1FD9)],
-          //   begin: Alignment.topLeft,
-          //   end: Alignment.bottomRight,
-          // ),
-          // backgroundColor: Colors.purple,
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Container(
               padding: EdgeInsets.all(20.0),
               width: size.width,
@@ -69,32 +62,34 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 color: Colors.white.withOpacity(0.2),
-                child: Image(
-                  image: AssetImage('assets/main.png'),
-                  fit: BoxFit.scaleDown,
-                ),
+                child: Image(image: AssetImage('assets/main.png')),
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 40.0)),
+            SizedBox(height: 30.0),
             Text(
-              "${name[widget.i]}",
-              style: Textstyle(
+              musicNames[widget.i],
+              style: TextStyle(
                 fontSize: 26.0,
               ),
+              textAlign: TextAlign.center,
             ),
-            Padding(padding: EdgeInsets.only(top: 50.0)),
+            SizedBox(height: 40.0),
             Container(
               height: 80.0,
+              width: 80.0,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [Color(0XFF2E22AC), Color(0xFFE34C9D)]),
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0XFF2E22AC),
+                    Color(0xFFE34C9D),
+                  ],
+                ),
               ),
-              child: MaterialButton(
-                shape: CircleBorder(),
-                child: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
+              child: IconButton(
+                icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                 onPressed: () {
                   if (isPlaying) {
                     setState(() {

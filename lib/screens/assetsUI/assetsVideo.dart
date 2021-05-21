@@ -13,7 +13,7 @@ class _AssetsVideoState extends State<AssetsVideo> {
     return Column(
       children: <Widget>[
         Divider(),
-        Padding(padding: EdgeInsets.only(top: 20.0)),
+        SizedBox(height: 20.0),
         ListTile(
           title: Text(
             "Dark Trailer",
@@ -26,24 +26,23 @@ class _AssetsVideoState extends State<AssetsVideo> {
             },
           ),
         ),
-        Padding(padding: EdgeInsets.only(top: 20.0)),
+        SizedBox(height: 20.0),
         Divider(),
-        Padding(padding: EdgeInsets.only(top: 20.0)),
+        SizedBox(height: 20.0),
         ListTile(
           title: Text(
             "Mustang Shelby",
             style: TextStyle(fontSize: 35.0),
           ),
           trailing: GestureDetector(
-              child: Icon(Icons.exit_to_app),
-              onTap: () {
-                navigateToVideoPage('car');
-              }),
+            child: Icon(Icons.exit_to_app),
+            onTap: () {
+              navigateToVideoPage('car');
+            },
+          ),
         ),
-
-        Padding(padding: EdgeInsets.only(top: 20.0)),
+        SizedBox(height: 20.0),
         Divider(),
-        // AssetVideoPlayer('car'),
       ],
     );
   }

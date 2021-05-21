@@ -14,45 +14,48 @@ class _VideoStreamState extends State<VideoStream> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
         title: Text(
           "Video Stream",
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
-          children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: 40.0)),
+          children: [
+            SizedBox(height: 40.0),
             Container(
-              margin: EdgeInsets.only(),
               width: size.width,
               height: (size.height) / 4,
               child: Card(
                 color: Colors.white.withOpacity(0.1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50.0),
+                  side: BorderSide(
+                    color: Colors.white,
+                    width: 1.0,
+                  ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+                  children: [
                     Text(
-                      '"Music Videos\nStreaming from\nAWS S3"',
+                      "\"Music Videos\nStreaming from\nAWS S3\"",
                       style: TextStyle(
                         fontSize: 30.0,
-                        foreground: Paint()..shader = linearGradient,
                         fontWeight: FontWeight.bold,
+                        foreground: Paint()..shader = shader,
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(right: 20.0)),
+                    SizedBox(width: 20.0),
                     Image.asset("assets/cloud.png"),
                   ],
                 ),
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 20.0)),
+            SizedBox(height: 20.0),
             Divider(),
-            Padding(padding: EdgeInsets.only(top: 20.0)),
+            SizedBox(height: 20.0),
             Container(
               height: 400.0,
               child: ListView.builder(
@@ -78,11 +81,10 @@ class _VideoStreamState extends State<VideoStream> {
                       elevation: 0.0,
                       child: Center(
                         child: Text(
-                          "${videoName[i]}",
+                          videoName[i],
                           style: TextStyle(
                             fontSize: 30.0,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -96,7 +98,10 @@ class _VideoStreamState extends State<VideoStream> {
     );
   }
 
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[Color(0xFF2468FB), Color(0xFFAB1FD9)],
+  final Shader shader = LinearGradient(
+    colors: [
+      Color(0xFF2468FB),
+      Color(0xFFAB1FD9),
+    ],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 250.0, 200.0));
 }

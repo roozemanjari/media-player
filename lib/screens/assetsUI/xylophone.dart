@@ -19,8 +19,7 @@ class _XylophoneState extends State<Xylophone> {
 
   void playCache(int index) {
     index = index + 1;
-    AudioCache player = AudioCache();
-    player.play("note$index.wav");
+    AudioCache().play("note$index.wav");
   }
 
   @override
@@ -34,9 +33,9 @@ class _XylophoneState extends State<Xylophone> {
           style: TextStyle(fontSize: 35.0),
         ),
         Container(
-          padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
           width: size.width,
-          height: size.height * 0.6,
+          height: size.height * 0.62,
           child: ListView.builder(
             physics: BouncingScrollPhysics(),
             itemCount: 7,
@@ -51,44 +50,7 @@ class _XylophoneState extends State<Xylophone> {
                 ),
                 margin: EdgeInsets.only(top: 10.0),
                 width: size.width,
-                height: size.height / 12,
-                child: Card(
-                  margin: EdgeInsets.all(0.0),
-                  elevation: 10.0,
-                  color: colors[i],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.all(10.0),
-                        width: 20.0,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [Colors.grey[500], Colors.grey[100]],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.all(10.0),
-                        width: 20.0,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: LinearGradient(
-                            colors: [Colors.grey[500], Colors.grey[100]],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                height: size.height * 0.08,
               ),
             ),
           ),

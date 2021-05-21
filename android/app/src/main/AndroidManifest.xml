@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mediaplayer">
    <application
+   android:usesCleartextTraffic="true"
         android:label="mediaplayer"
         android:icon="@mipmap/ic_launcher">
         <activity

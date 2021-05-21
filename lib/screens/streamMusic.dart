@@ -24,41 +24,30 @@ class _StreamMusicState extends State<StreamMusic> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        elevation: 0.0,
         title: Text(
           "Music Stream",
-          // style: GoogleFonts.dmSans(),
         ),
         centerTitle: true,
-        // gradient: LinearGradient(
-        //   colors: [Color(0xFF2468FB), Color(0xFFAB1FD9)],
-        //   begin: Alignment.topLeft,
-        //   end: Alignment.bottomRight,
-        // ),
-        // backgroundColor: Colors.purple,
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Container(
-          //alignment: Alignment.topCenter,
-          height: size.height + 1300.0,
+          height: size.height + 1450.0,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
+            children: [
               Container(
-                padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsets.only(left: 20.0, top: 20.0),
                 width: size.width,
                 child: Text(
-                  "$greetingMessage,\nShashwat",
+                  "$greetingMessage,\nRooze",
                   style: TextStyle(
                     fontSize: 35.0,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ),
-              Padding(padding: EdgeInsets.only(top: 20.0)),
+              SizedBox(height: 20.0),
               Container(
-                margin: EdgeInsets.only(),
                 width: size.width,
                 height: (size.height) / 4,
                 child: Card(
@@ -68,38 +57,32 @@ class _StreamMusicState extends State<StreamMusic> {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
+                    children: [
                       Text(
-                        '"Stream Online\nListen Anytime\nAnywhere"',
+                        "\"Stream Online\nListen Anytime\nAnywhere\"",
                         style: TextStyle(
                           fontSize: 30.0,
-                          foreground: Paint()..shader = linearGradient,
-                          fontWeight: FontWeight.bold,
+                          foreground: Paint()..shader = shader,
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(right: 20.0)),
+                      SizedBox(width: 20.0),
                       Image.asset("assets/icon.png"),
                     ],
                   ),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(top: 20.0)),
-              Divider(
-                thickness: 1.0,
-              ),
-              Padding(padding: EdgeInsets.only(top: 20.0)),
+              SizedBox(height: 20.0),
+              Divider(thickness: 1.0),
+              SizedBox(height: 20.0),
               Container(
-                padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsets.only(left: 20.0),
                 width: size.width,
                 child: Text(
                   "All songs",
-                  style: TextStyle(
-                    fontSize: 30.0,
-                  ),
-                  textAlign: TextAlign.left,
+                  style: TextStyle(fontSize: 30.0),
                 ),
               ),
-              Padding(padding: EdgeInsets.only(top: 10.0)),
+              SizedBox(height: 10.0),
               Expanded(
                 child: Container(
                   child: ListView.builder(
@@ -117,8 +100,8 @@ class _StreamMusicState extends State<StreamMusic> {
                       },
                       child: Container(
                         height: 90.0,
-                        padding: EdgeInsets.all(2.0),
                         width: size.width,
+                        padding: EdgeInsets.all(2.0),
                         child: Card(
                           color: Colors.white.withOpacity(0.1),
                           shape: RoundedRectangleBorder(
@@ -126,13 +109,13 @@ class _StreamMusicState extends State<StreamMusic> {
                           ),
                           elevation: 0.0,
                           child: Row(
-                            children: <Widget>[
-                              Padding(padding: EdgeInsets.only(right: 10.0)),
+                            children: [
+                              SizedBox(width: 10.0),
                               CircleAvatar(
                                 radius: 28.0,
                                 child: Image.asset("assets/mus.png"),
                               ),
-                              Padding(padding: EdgeInsets.only(right: 10.0)),
+                              SizedBox(width: 10.0),
                               Text(
                                 formatter(i),
                               ),
@@ -152,6 +135,6 @@ class _StreamMusicState extends State<StreamMusic> {
   }
 }
 
-final Shader linearGradient = LinearGradient(
+final Shader shader = LinearGradient(
   colors: <Color>[Color(0xFF2468FB), Color(0xFFAB1FD9)],
 ).createShader(Rect.fromLTWH(0.0, 0.0, 250.0, 200.0));
