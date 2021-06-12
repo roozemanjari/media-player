@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Xylophone extends StatefulWidget {
   @override
@@ -19,6 +19,7 @@ class _XylophoneState extends State<Xylophone> {
 
   void playCache(int index) {
     index = index + 1;
+    // Audio cache is in audio player plugin used to play asset audios
     AudioCache().play("note$index.wav");
   }
 

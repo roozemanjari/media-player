@@ -12,7 +12,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   // Variables
-  DateTime currentTime;
   int _selectedIndex = 0;
   bool isloading = true;
 
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    currentTime = DateTime.now();
     setGreetingMessage();
     fetchMusicNames();
   }
@@ -44,7 +42,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   setGreetingMessage() {
-    int currentHour = currentTime.hour;
+    int currentHour = DateTime.now().hour;
     if (currentHour >= 0 && currentHour < 12) {
       greetingMessage = "Good morning";
     } else if (currentHour >= 12 && currentHour < 15) {

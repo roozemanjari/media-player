@@ -13,6 +13,7 @@ class PlayOnlineMusic extends StatefulWidget {
 
 class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
   AudioPlayer advancedPlayer = AudioPlayer();
+  //audioplayer plugin object created
   bool isPlaying;
 
   @override
@@ -25,6 +26,8 @@ class _PlayOnlineMusicState extends State<PlayOnlineMusic> {
 
   Future loadMusic() async {
     advancedPlayer.play(musicUrl(widget.i));
+    //to access whatever is present
+    // in the parent class of stateful widget.
   }
 
   @override

@@ -10,6 +10,7 @@ class StreamMusic extends StatefulWidget {
 }
 
 class _StreamMusicState extends State<StreamMusic> {
+  //to reduce length of song names
   formatter(int i) {
     String value = musicNames[i];
     if (value.length > 40) {
@@ -19,6 +20,7 @@ class _StreamMusicState extends State<StreamMusic> {
     return value;
   }
 
+//90
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

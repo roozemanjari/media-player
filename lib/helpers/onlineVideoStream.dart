@@ -13,11 +13,12 @@ class NetworkVideoPlayer extends StatefulWidget {
 
 class _NetworkVideoPlayerState extends State<NetworkVideoPlayer> {
   VideoPlayerController _controller;
-  Future _initializeVideoPlayerFuture;
+  Future _initializeVideoPlayerFuture; //future will track its progress
 
   @override
   void initState() {
     super.initState();
+    // Controller initialize -> network video -> using a link/url
     _controller = VideoPlayerController.network(videourl[widget.i]);
     _initializeVideoPlayerFuture = _controller.initialize();
     _controller.setLooping(false);
